@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Applycation</title>
+    <link rel="stylesheet" type="text/css" href="application.css" />
+  </head>
+
+
+  <body ></body>  
+  <!--
+    style="background-image: url(https://images.unsplash.com/photo-1508527951275-84b4bfe1be1a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8ODl8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60);"
+  -->
+    <div class="heading">WeHelp申請書</div>
+    <div class="frame">
+      <div id="list"></div>
+    </div>
+ 
+    <script>
+      //先顯示Loading的訊息
+      let list = document.getElementById("list");
+      list.innerHTML = "... Loading ...";
+    
+
+
+      //透過AJAX fetch API 連線到遠端的網址,抓取資料
+      /* 
+      fetch(網址).then(function(response){
+        //Response 物件,代表伺服器的回應
+      })
+      */
+      let src = "https://eebensonchen.github.io/application/data/question.json";
+      fetch(src)
+        .then(function (response) {
+          //console.log(response);  //查看瀏覽器console回應
+          ///return response.text(); //用字串的方式取回資料
+          return response.json(); //將資料用 JSON 的格式詮釋成: 物件和陣列的組合
+        })
+        .then(function (result) {
+          ///console.log("最終的資料", result);   //字串的形式不好處理
+          ////console.log("最終的資料", result);
+          //把抓到的資料放到畫面上
+
+          /*
+          list.innerHTML = "";
+          let qa;
+          for (let i = 0; i < result.length; i++) {
+            qa = result[i];
+            list.innerHTML += qa.question.bold() + " - " + qa.answer + "<hr/>";
+          }
+          */
+          console.log("最終的資料", result);
+          list.innerHTML = "";
+          let QAA = result;
+          qaa(QAA);
+        });
+
+        function qaa(QA) {
+          for (let i = 0; i < QA.length; i++) {
+            let myArticle = document.createElement("article");
+            let myTitle = document.createElement("tltle");
+            let myPara = document.createElement("p");
+            let myWebsite1 = document.createElement("ul1");
+            let myWebsite2 = document.createElement("ul2");
+            let myLine = document.createElement("line");
+
+            myArticle.setAttribute("class","article");
+            myTitle.setAttribute("class","title");
+            myPara.setAttribute("class","p" );
+            myWebsite1.setAttribute("class","ul1");
+            myWebsite2.setAttribute("class","ul2");
+
+            let link1 = "https://www.udacity.com/course/intro-to-javascript--ud803";
+            let link2 = "https://www.youtube.com/playlist?list=PL-g0fdC5RMbqW54tWQPIVbhyl_Ky6a2VI";
+            let webName1 = "UDACITY : Intro to JavaScript";
+            let webName2 = "彭彭的課程 : HTML、CSS、JavaScript 網頁前端工程";
+
+            myLine.innerHTML = "<hr/>";
+
+            myTitle.textContent = QA[i].question;
+            myPara.textContent = QA[i].answer;
+
+            if (i == 1){
+              myWebsite1.innerHTML = "<li><a href='" + link1 + "'>" + webName1 + "</a></li>";
+              myWebsite2.innerHTML = "<li><a href='" + link2 + "'>" + webName2 + "</a></li>";
+              
+              myArticle.appendChild(myTitle);
+              myArticle.appendChild(myLine);
+              myArticle.appendChild(myPara);
+              myArticle.appendChild(myWebsite1);
+              myArticle.appendChild(myWebsite2);
+
+              list.appendChild(myArticle);
+
+            } else {
+              myArticle.appendChild(myTitle);
+              myArticle.appendChild(myLine);
+              myArticle.appendChild(myPara);
+
+              list.appendChild(myArticle);
+            };
+
+          };
+        };
+
+    </script>
+  </body>
+</html>
