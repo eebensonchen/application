@@ -1,0 +1,74 @@
+body {
+    background-image:url( 'https://images.unsplash.com/photo-1662823780903-becfa879379b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDR8SnBnNktpZGwtSGt8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60'); 
+    background-repeat:no-repeat;
+    background-size: 100%;
+}
+.heading {
+  padding: 5px;
+  background-color: hsl(202, 81%, 75%);
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-align: center;   /* 文字水平置中 */
+}
+.frame {
+  display: flex;
+  justify-content: center;  /* 水平置中 */
+  align-items: center;  /* 垂直置中 */
+}
+#list {
+  flex: none;
+}
+.article {
+  width: 100%;
+  margin-bottom: 10px;
+  background-color: hsl(198, 42%, 95%);
+  text-align: center;
+}
+.title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 15px;
+}
+.p {
+  margin: 10px;
+  text-align: start;
+}
+.ul1 {
+  margin-bottom: 5px;
+  text-align: start;
+}
+.ul2 {
+  margin-bottom: 5px;
+  text-align: start;
+}
+
+
+@media (max-width: 1250px) {
+  /*  桌機螢幕寬度最小約1250px  */ /*  平板  */
+  /*  螢幕寬度小於 1250px, 套用這個區塊的 CSS  */
+  #list {
+    width: 90%;
+  }
+}
+
+@media (max-width: 500px) {
+  /*  手機,手機最小360px  */
+  /*  螢幕寬度小於 500px, 套用這個區塊的 CSS  */
+  .heading {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  .title {
+    font-size: 15px;
+    margin-top: 10px;
+  }
+  .p {
+    font-size: 10px;
+  }.ul1 {
+    font-size: 10px;
+  }
+  .ul2 {
+    font-size: 10px;
+  }
+}
