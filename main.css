@@ -1,7 +1,7 @@
 body {
-    background-image:url( 'https://images.unsplash.com/photo-1662823780903-becfa879379b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDR8SnBnNktpZGwtSGt8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60'); 
-    background-repeat:no-repeat;
-    background-size: 100%;
+  background-image: url("https://images.unsplash.com/photo-1662823780903-becfa879379b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDR8SnBnNktpZGwtSGt8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60");
+  background-repeat: no-repeat;
+  background-size: 100%;
 }
 .heading {
   padding: 5px;
@@ -9,15 +9,16 @@ body {
   font-size: 30px;
   font-weight: bold;
   margin-bottom: 15px;
-  text-align: center;   /* 文字水平置中 */
+  text-align: center; /* 文字水平置中 */
 }
 .frame {
   display: flex;
-  justify-content: center;  /* 水平置中 */
-  align-items: center;  /* 垂直置中 */
+  justify-content: center; /* 水平置中 */
+  align-items: center; /* 垂直置中 */
 }
 #list {
   flex: none;
+  width: 60%;
 }
 .article {
   width: 100%;
@@ -43,12 +44,11 @@ body {
   text-align: start;
 }
 
-
 @media (max-width: 1250px) {
   /*  桌機螢幕寬度最小約1250px  */ /*  平板  */
   /*  螢幕寬度小於 1250px, 套用這個區塊的 CSS  */
   #list {
-    width: 90%;
+    width: 80%;
   }
 }
 
@@ -65,7 +65,8 @@ body {
   }
   .p {
     font-size: 10px;
-  }.ul1 {
+  }
+  .ul1 {
     font-size: 10px;
   }
   .ul2 {
