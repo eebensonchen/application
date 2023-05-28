@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Applycation</title>
-    <link rel="stylesheet" type="text/css" href="application.css" />
+    <link rel="stylesheet" type="text/css" href="main.css" />
   </head>
 
 
@@ -63,7 +63,7 @@
 
             myTitle.textContent = QA[i].question;
             myParaTemp = QA[i].answer;
-            myPara.innerHTML = myParaTemp.replace(/\t/g,'<span> </span>').replace(/\r\n/g,"<br/>");  //
+            myPara.innerHTML = myParaTemp.replace(/\r\n/g,"<br/>");  //
             //myPara.textContent = QA[i].answer;
 
             if (i == 1){
